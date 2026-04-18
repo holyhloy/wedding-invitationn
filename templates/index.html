@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ groom }} & {{ bride }} — Свадьба</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,400&family=Jost:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- GSAP CDN (бесплатно) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+    <!-- СЕКЦИЯ 1: Hero -->
+    <section class="hero" id="hero">
+        <div class="hero__names">
+            <span class="hero__name hero__name--groom">{{ groom }}</span>
+            <span class="hero__ampersand">&amp;</span>
+            <span class="hero__name hero__name--bride">{{ bride }}</span>
+        </div>
+        <p class="hero__date">{{ date }}</p>
+        <div class="hero__scroll-hint">↓</div>
+    </section>
+
+    <!-- СЕКЦИЯ 2: Детали -->
+    <section class="details" id="details">
+        <div class="details__item">
+            <span class="details__label">Место</span>
+            <span class="details__value">{{ venue }}</span>
+        </div>
+        <div class="details__item">
+            <span class="details__label">Начало</span>
+            <span class="details__value">17:00</span>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 3: RSVP форма -->
+    <section class="rsvp" id="rsvp">
+        <h2 class="rsvp__title">Вы придёте?</h2>
+        <form class="rsvp__form" id="rsvpForm">
+            <input class="rsvp__input" type="text" name="name" placeholder="Ваше имя" required>
+            <input class="rsvp__input" type="tel" name="phone" placeholder="Телефон (необязательно)">
+            <select class="rsvp__input" name="guests_count">
+                <option value="1">Приду один(а)</option>
+                <option value="2">Приду с парой</option>
+            </select>
+            <div class="rsvp__radio-group">
+                <label class="rsvp__radio-label">
+                    <input type="radio" name="status" value="attending" checked>
+                    Буду! 🎉
+                </label>
+                <label class="rsvp__radio-label">
+                    <input type="radio" name="status" value="not_attending">
+                    К сожалению, нет
+                </label>
+            </div>
+            <textarea class="rsvp__input" name="message" placeholder="Пожелания молодожёнам (необязательно)"
+                rows="3"></textarea>
+            <button class="rsvp__btn" type="submit">Отправить</button>
+        </form>
+        <div class="rsvp__success" id="rsvpSuccess" style="display:none">
+            <p>Спасибо! Мы вас ждём 🎉</p>
+        </div>
+    </section>
+
+    <script src="/static/js/animation.js"></script>
+</body>
+
+</html>
