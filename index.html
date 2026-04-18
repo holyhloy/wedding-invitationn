@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Алина & Тимур — 14 августа 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300;400&display=swap"
+    rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --cream:   #FAF7F2;
-      --warm:    #F2EBE0;
-      --blush:   #E8D5C4;
-      --rose:    #C9A898;
-      --dusty:   #8B6E65;
-      --bark:    #5C4A42;
-      --text:    #3D2B25;
-      --muted:   #9A8078;
-      --gold:    #C4A882;
-      --sage:    #8A9E8C;
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --cream: #FAF7F2;
+      --warm: #F2EBE0;
+      --blush: #E8D5C4;
+      --rose: #C9A898;
+      --dusty: #8B6E65;
+      --bark: #5C4A42;
+      --text: #3D2B25;
+      --muted: #9A8078;
+      --gold: #C4A882;
+      --sage: #8A9E8C;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--cream);
@@ -38,11 +49,17 @@
 
     /* ─── LOADER ─────────────────────────────────────────────── */
     #loader {
-      position: fixed; inset: 0; z-index: 999;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
       background: var(--cream);
-      display: flex; align-items: center; justify-content: center;
-      flex-direction: column; gap: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
     }
+
     #loader .l-names {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 6vw, 3.5rem);
@@ -51,17 +68,22 @@
       color: var(--bark);
       opacity: 0;
     }
+
     #loader .l-line {
-      width: 0; height: 1px;
+      width: 0;
+      height: 1px;
       background: var(--gold);
     }
 
     /* ─── HERO ───────────────────────────────────────────────── */
     .hero {
       min-height: 100svh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      position: relative; overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
       padding: 2rem;
       background: var(--cream);
     }
@@ -72,8 +94,20 @@
       pointer-events: none;
       opacity: 0;
     }
-    .branch--tl { top: -2rem; left: -3rem; width: clamp(180px, 30vw, 340px); transform: scaleX(-1); }
-    .branch--br { bottom: -2rem; right: -3rem; width: clamp(180px, 30vw, 340px); transform: rotate(180deg); }
+
+    .branch--tl {
+      top: -2rem;
+      left: -3rem;
+      width: clamp(180px, 30vw, 340px);
+      transform: scaleX(-1);
+    }
+
+    .branch--br {
+      bottom: -2rem;
+      right: -3rem;
+      width: clamp(180px, 30vw, 340px);
+      transform: rotate(180deg);
+    }
 
     .hero__eyebrow {
       font-family: 'Jost', sans-serif;
@@ -87,8 +121,10 @@
     }
 
     .hero__names {
-      display: flex; flex-direction: column;
-      align-items: center; gap: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
       margin-bottom: 1.5rem;
     }
 
@@ -99,7 +135,8 @@
       line-height: 0.9;
       letter-spacing: -0.01em;
       color: var(--bark);
-      opacity: 0; transform: translateY(40px);
+      opacity: 0;
+      transform: translateY(40px);
     }
 
     .hero__amp {
@@ -113,10 +150,12 @@
     }
 
     .hero__divider {
-      width: 60px; height: 1px;
+      width: 60px;
+      height: 1px;
       background: var(--gold);
       margin: 1.5rem auto;
-      opacity: 0; transform: scaleX(0);
+      opacity: 0;
+      transform: scaleX(0);
     }
 
     .hero__date {
@@ -130,28 +169,42 @@
     }
 
     .hero__scroll {
-      position: absolute; bottom: 2.5rem; left: 50%;
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
       transform: translateX(-50%);
-      display: flex; flex-direction: column;
-      align-items: center; gap: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
       opacity: 0;
     }
+
     .hero__scroll span {
-      font-size: 0.65rem; letter-spacing: 0.25em;
-      text-transform: uppercase; color: var(--muted);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
+
     .hero__scroll-line {
-      width: 1px; height: 40px;
+      width: 1px;
+      height: 40px;
       background: linear-gradient(to bottom, var(--gold), transparent);
     }
 
     /* ─── SECTION BASE ───────────────────────────────────────── */
-    section { padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 3rem); }
+    section {
+      padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 3rem);
+    }
 
     .section-label {
-      font-size: 0.65rem; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--muted);
-      margin-bottom: 1rem; text-align: center;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      text-align: center;
     }
 
     .section-title {
@@ -178,7 +231,8 @@
     .intro {
       background: var(--warm);
       text-align: center;
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
     }
 
     .intro__text {
@@ -194,15 +248,19 @@
 
     .intro__sig {
       margin-top: 2rem;
-      font-size: 0.8rem; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
     /* ─── DATE BANNER ────────────────────────────────────────── */
     .date-banner {
       background: var(--bark);
       color: var(--cream);
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       gap: clamp(2rem, 8vw, 6rem);
       padding: clamp(3rem, 7vw, 5rem) 2rem;
       flex-wrap: wrap;
@@ -221,24 +279,29 @@
     }
 
     .date-banner__label {
-      font-size: 0.65rem; letter-spacing: 0.3em;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
       text-transform: uppercase;
-      color: rgba(250,247,242,0.5);
+      color: rgba(250, 247, 242, 0.5);
       margin-top: 0.5rem;
     }
 
     .date-banner__sep {
-      width: 1px; height: 60px;
-      background: rgba(196,168,130,0.3);
+      width: 1px;
+      height: 60px;
+      background: rgba(196, 168, 130, 0.3);
     }
 
     /* ─── TIMELINE ───────────────────────────────────────────── */
-    .timeline { background: var(--cream); }
+    .timeline {
+      background: var(--cream);
+    }
 
     .timeline__list {
       max-width: 560px;
       margin: 0 auto;
-      display: flex; flex-direction: column;
+      display: flex;
+      flex-direction: column;
       gap: 0;
     }
 
@@ -248,12 +311,14 @@
       gap: 0 1.5rem;
       align-items: start;
       padding: 1.5rem 0;
-      opacity: 0; transform: translateX(-20px);
+      opacity: 0;
+      transform: translateX(-20px);
     }
 
     .timeline__time {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; font-weight: 300;
+      font-size: 1.4rem;
+      font-weight: 300;
       color: var(--gold);
       text-align: right;
       padding-top: 0.15rem;
@@ -261,29 +326,42 @@
 
     .timeline__line {
       background: var(--blush);
-      position: relative; align-self: stretch;
+      position: relative;
+      align-self: stretch;
     }
+
     .timeline__line::before {
       content: '';
-      position: absolute; top: 0.45rem; left: 50%;
+      position: absolute;
+      top: 0.45rem;
+      left: 50%;
       transform: translateX(-50%);
-      width: 7px; height: 7px; border-radius: 50%;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
       background: var(--gold);
     }
 
     .timeline__content {}
+
     .timeline__event {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem; font-weight: 400;
-      color: var(--bark); margin-bottom: 0.25rem;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--bark);
+      margin-bottom: 0.25rem;
     }
+
     .timeline__desc {
-      font-size: 0.85rem; color: var(--muted);
+      font-size: 0.85rem;
+      color: var(--muted);
       line-height: 1.6;
     }
 
     /* ─── DETAILS GRID ───────────────────────────────────────── */
-    .details { background: var(--warm); }
+    .details {
+      background: var(--warm);
+    }
 
     .details__grid {
       display: grid;
@@ -298,57 +376,78 @@
       background: var(--cream);
       padding: 2.5rem 2rem;
       text-align: center;
-      opacity: 0; transform: translateY(20px);
+      opacity: 0;
+      transform: translateY(20px);
     }
 
     .details__icon {
-      width: 36px; height: 36px;
+      width: 36px;
+      height: 36px;
       margin: 0 auto 1rem;
       color: var(--gold);
     }
 
     .details__card-title {
-      font-size: 0.65rem; letter-spacing: 0.25em;
-      text-transform: uppercase; color: var(--muted);
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
       margin-bottom: 0.75rem;
     }
 
     .details__card-value {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem; font-weight: 300;
-      color: var(--bark); line-height: 1.4;
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--bark);
+      line-height: 1.4;
     }
 
     /* ─── DRESSCODE ──────────────────────────────────────────── */
-    .dresscode { background: var(--cream); text-align: center; }
+    .dresscode {
+      background: var(--cream);
+      text-align: center;
+    }
 
     .dresscode__swatches {
-      display: flex; justify-content: center;
-      gap: 1rem; flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
       margin: 2.5rem auto 1.5rem;
     }
 
     .swatch {
-      display: flex; flex-direction: column;
-      align-items: center; gap: 0.6rem;
-      opacity: 0; transform: translateY(15px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      opacity: 0;
+      transform: translateY(15px);
     }
 
     .swatch__circle {
-      width: 56px; height: 56px; border-radius: 50%;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     }
 
     .swatch__name {
-      font-size: 0.65rem; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--muted);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
 
     .dresscode__note {
-      max-width: 44ch; margin: 0 auto;
+      max-width: 44ch;
+      margin: 0 auto;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem; font-style: italic;
-      color: var(--dusty); line-height: 1.7;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--dusty);
+      line-height: 1.7;
     }
 
     /* ─── WISHES / GIFTS ─────────────────────────────────────── */
@@ -358,31 +457,45 @@
       text-align: center;
     }
 
-    .wishes .section-title { color: var(--gold); }
-    .wishes .section-label { color: rgba(250,247,242,0.45); }
+    .wishes .section-title {
+      color: var(--gold);
+    }
+
+    .wishes .section-label {
+      color: rgba(250, 247, 242, 0.45);
+    }
 
     .wishes__text {
-      max-width: 48ch; margin: 0 auto;
+      max-width: 48ch;
+      margin: 0 auto;
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      font-weight: 300; font-style: italic;
+      font-weight: 300;
+      font-style: italic;
       line-height: 1.75;
-      color: rgba(250,247,242,0.85);
+      color: rgba(250, 247, 242, 0.85);
     }
 
     /* ─── CHAT CTA ───────────────────────────────────────────── */
-    .chat { background: var(--warm); text-align: center; }
+    .chat {
+      background: var(--warm);
+      text-align: center;
+    }
 
     .chat__btn {
-      display: inline-flex; align-items: center; gap: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
       margin-top: 2rem;
       padding: 1rem 2.5rem;
       border: 1px solid var(--bark);
       background: transparent;
       color: var(--bark);
       font-family: 'Jost', sans-serif;
-      font-size: 0.8rem; font-weight: 300;
-      letter-spacing: 0.2em; text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 300;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
       text-decoration: none;
       cursor: pointer;
       transition: background 0.3s, color 0.3s;
@@ -409,376 +522,391 @@
     }
 
     .footer__year {
-      font-size: 0.65rem; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--muted);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--muted);
       margin-top: 1.5rem;
     }
 
     /* ─── REVEAL UTILITY ─────────────────────────────────────── */
-    .reveal { opacity: 0; transform: translateY(30px); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+    }
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
     @media (max-width: 600px) {
-      .date-banner__sep { display: none; }
-      .date-banner { gap: 1.5rem; }
+      .date-banner__sep {
+        display: none;
+      }
+
+      .date-banner {
+        gap: 1.5rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- LOADER -->
-<div id="loader">
-  <div class="l-names">Алина &amp; Тимур</div>
-  <div class="l-line"></div>
-</div>
-
-<!-- HERO -->
-<section class="hero" id="hero">
-  <!-- Ветка левый верхний угол -->
-  <svg class="branch branch--tl" viewBox="0 0 340 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20 300 Q60 200 120 150 Q180 100 260 40" stroke="#C4A882" stroke-width="1.5" fill="none" opacity="0.6"/>
-    <path d="M120 150 Q140 110 170 80" stroke="#C4A882" stroke-width="1" fill="none" opacity="0.5"/>
-    <path d="M170 90 Q190 70 220 60" stroke="#C4A882" stroke-width="1" fill="none" opacity="0.4"/>
-    <path d="M180 100 Q200 85 230 78" stroke="#C4A882" stroke-width="1" fill="none" opacity="0.35"/>
-    <ellipse cx="135" cy="120" rx="12" ry="7" fill="#C9A898" opacity="0.35" transform="rotate(-25 135 120)"/>
-    <ellipse cx="165" cy="92" rx="10" ry="6" fill="#C9A898" opacity="0.3" transform="rotate(-40 165 92)"/>
-    <ellipse cx="200" cy="68" rx="9" ry="5" fill="#8A9E8C" opacity="0.3" transform="rotate(-30 200 68)"/>
-    <ellipse cx="225" cy="55" rx="8" ry="5" fill="#8A9E8C" opacity="0.25" transform="rotate(-45 225 55)"/>
-    <circle cx="145" cy="135" r="4" fill="#C9A898" opacity="0.4"/>
-    <circle cx="175" cy="105" r="3.5" fill="#C9A898" opacity="0.35"/>
-    <circle cx="210" cy="75" r="3" fill="#C4A882" opacity="0.4"/>
-    <path d="M80 200 Q100 175 130 160" stroke="#C4A882" stroke-width="0.8" fill="none" opacity="0.4"/>
-    <ellipse cx="115" cy="165" rx="9" ry="5" fill="#8A9E8C" opacity="0.3" transform="rotate(-20 115 165)"/>
-    <path d="M160 140 Q175 120 195 108" stroke="#C4A882" stroke-width="0.8" fill="none" opacity="0.35"/>
-    <ellipse cx="190" cy="110" rx="8" ry="5" fill="#C9A898" opacity="0.25" transform="rotate(-35 190 110)"/>
-  </svg>
-
-  <!-- Ветка правый нижний угол -->
-  <svg class="branch branch--br" viewBox="0 0 340 320" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M20 300 Q60 200 120 150 Q180 100 260 40" stroke="#C4A882" stroke-width="1.5" fill="none" opacity="0.6"/>
-    <path d="M120 150 Q140 110 170 80" stroke="#C4A882" stroke-width="1" fill="none" opacity="0.5"/>
-    <path d="M170 90 Q190 70 220 60" stroke="#C4A882" stroke-width="1" fill="none" opacity="0.4"/>
-    <ellipse cx="135" cy="120" rx="12" ry="7" fill="#C9A898" opacity="0.35" transform="rotate(-25 135 120)"/>
-    <ellipse cx="165" cy="92" rx="10" ry="6" fill="#C9A898" opacity="0.3" transform="rotate(-40 165 92)"/>
-    <ellipse cx="200" cy="68" rx="9" ry="5" fill="#8A9E8C" opacity="0.3" transform="rotate(-30 200 68)"/>
-    <circle cx="145" cy="135" r="4" fill="#C9A898" opacity="0.4"/>
-    <circle cx="175" cy="105" r="3.5" fill="#C9A898" opacity="0.35"/>
-    <circle cx="210" cy="75" r="3" fill="#C4A882" opacity="0.4"/>
-    <path d="M80 200 Q100 175 130 160" stroke="#C4A882" stroke-width="0.8" fill="none" opacity="0.4"/>
-    <ellipse cx="115" cy="165" rx="9" ry="5" fill="#8A9E8C" opacity="0.3" transform="rotate(-20 115 165)"/>
-  </svg>
-
-  <p class="hero__eyebrow">Приглашение на свадьбу</p>
-  <div class="hero__names">
-    <span class="hero__name" id="name1">Алина</span>
-    <span class="hero__amp">&amp;</span>
-    <span class="hero__name" id="name2">Тимур</span>
-  </div>
-  <div class="hero__divider"></div>
-  <p class="hero__date">14 августа 2026 года</p>
-
-  <div class="hero__scroll">
-    <span>Листать</span>
-    <div class="hero__scroll-line"></div>
-  </div>
-</section>
-
-<!-- INTRO -->
-<section class="intro">
-  <p class="section-label reveal">С любовью</p>
-  <p class="intro__text reveal">
-    Дорогие гости, скоро наступит самый важный день в нашей жизни —
-    мы станем семьёй! Мы очень хотим, чтобы вы разделили с нами эту радость.
-  </p>
-  <p class="intro__sig reveal">— Алина и Тимур</p>
-</section>
-
-<!-- DATE BANNER -->
-<div class="date-banner">
-  <div class="date-banner__item reveal">
-    <div class="date-banner__num">14</div>
-    <div class="date-banner__label">Августа</div>
-  </div>
-  <div class="date-banner__sep reveal"></div>
-  <div class="date-banner__item reveal">
-    <div class="date-banner__num">2026</div>
-    <div class="date-banner__label">Года</div>
-  </div>
-  <div class="date-banner__sep reveal"></div>
-  <div class="date-banner__item reveal">
-    <div class="date-banner__num">17<span style="font-size: 0.4em; color: var(--gold); opacity: 0.7">:00</span></div>
-    <div class="date-banner__label">Начало</div>
-  </div>
-</div>
-
-<!-- TIMELINE -->
-<section class="timeline">
-  <p class="section-label reveal">Программа дня</p>
-  <h2 class="section-title reveal">Как пройдёт наш день</h2>
-  <p class="section-subtitle reveal">Каждый момент продуман с заботой о вас</p>
-
-  <div class="timeline__list">
-    <div class="timeline__item">
-      <div class="timeline__time">10:00</div>
-      <div class="timeline__line"></div>
-      <div class="timeline__content">
-        <div class="timeline__event">Регистрация брака</div>
-        <div class="timeline__desc">Управление ЗАГС, ул. Интернациональная 27а. Приготовьте носовые платочки.</div>
-      </div>
-    </div>
-    <div class="timeline__item">
-      <div class="timeline__time">15:00</div>
-      <div class="timeline__line"></div>
-      <div class="timeline__content">
-        <div class="timeline__event">Сбор гостей</div>
-        <div class="timeline__desc">Встречаемся, знакомимся, обнимаемся.</div>
-      </div>
-    </div>
-    <div class="timeline__item">
-      <div class="timeline__time">16:00</div>
-      <div class="timeline__line"></div>
-      <div class="timeline__content">
-        <div class="timeline__event">Фуршет</div>
-        <div class="timeline__desc">Лёгкие закуски и добрые разговоры.</div>
-      </div>
-    </div>
-    <div class="timeline__item">
-      <div class="timeline__time">17:00</div>
-      <div class="timeline__line"></div>
-      <div class="timeline__content">
-        <div class="timeline__event">Банкет</div>
-        <div class="timeline__desc">Вкусные блюда, тосты и незабываемая программа.</div>
-      </div>
-    </div>
-    <div class="timeline__item">
-      <div class="timeline__time">23:00</div>
-      <div class="timeline__line"></div>
-      <div class="timeline__content">
-        <div class="timeline__event">До свидания</div>
-        <div class="timeline__desc">Даже такой прекрасный вечер когда-нибудь заканчивается.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DETAILS -->
-<section class="details">
-  <p class="section-label reveal">Детали</p>
-  <h2 class="section-title reveal">Где и когда</h2>
-  <p class="section-subtitle reveal">Вся необходимая информация</p>
-
-  <div class="details__grid">
-    <div class="details__card">
-      <svg class="details__icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18 3C12.477 3 8 7.477 8 13c0 8.25 10 20 10 20s10-11.75 10-20c0-5.523-4.477-10-10-10z" stroke="currentColor" stroke-width="1.2"/>
-        <circle cx="18" cy="13" r="3.5" stroke="currentColor" stroke-width="1.2"/>
-      </svg>
-      <div class="details__card-title">Место</div>
-      <div class="details__card-value">Ресторан<br>«Белая ночь»</div>
-    </div>
-    <div class="details__card">
-      <svg class="details__icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="6" y="8" width="24" height="22" rx="2" stroke="currentColor" stroke-width="1.2"/>
-        <path d="M6 15h24" stroke="currentColor" stroke-width="1.2"/>
-        <path d="M13 5v6M23 5v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        <rect x="11" y="20" width="4" height="4" rx="0.5" fill="currentColor" opacity="0.5"/>
-        <rect x="21" y="20" width="4" height="4" rx="0.5" fill="currentColor" opacity="0.5"/>
-      </svg>
-      <div class="details__card-title">Дата</div>
-      <div class="details__card-value">14 августа<br>2026 года</div>
-    </div>
-    <div class="details__card">
-      <svg class="details__icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="1.2"/>
-        <path d="M18 10v8l5 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-      </svg>
-      <div class="details__card-title">Время начала</div>
-      <div class="details__card-value">17:00</div>
-    </div>
-    <div class="details__card">
-      <svg class="details__icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 28l4-8 6 4 6-10 4 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <circle cx="28" cy="10" r="4" stroke="currentColor" stroke-width="1.2"/>
-        <path d="M27 10h2M28 9v2" stroke="currentColor" stroke-width="1" stroke-linecap="round"/>
-      </svg>
-      <div class="details__card-title">Адрес</div>
-      <div class="details__card-value">ул. Примерная, 1</div>
-    </div>
-  </div>
-</section>
-
-<!-- DRESSCODE -->
-<section class="dresscode">
-  <p class="section-label reveal">Внешний вид</p>
-  <h2 class="section-title reveal">Дресс-код</h2>
-  <p class="section-subtitle reveal">
-    Мы знаем, что вы прекрасны в любом наряде! Но нам будет особенно радостно,
-    если вы поддержите цветовую гамму нашего торжества.
-  </p>
-
-  <div class="dresscode__swatches">
-    <div class="swatch">
-      <div class="swatch__circle" style="background: #722F37;"></div>
-      <span class="swatch__name">Винный</span>
-    </div>
-    <div class="swatch">
-      <div class="swatch__circle" style="background: #800020;"></div>
-      <span class="swatch__name">Бургунди</span>
-    </div>
-    <div class="swatch">
-      <div class="swatch__circle" style="background: #6B7C5E;"></div>
-      <span class="swatch__name">Оливковый</span>
-    </div>
-    <div class="swatch">
-      <div class="swatch__circle" style="background: #2E6B4F;"></div>
-      <span class="swatch__name">Изумрудный</span>
-    </div>
-    <div class="swatch">
-      <div class="swatch__circle" style="background: #E8D5C4;"></div>
-      <span class="swatch__name">Пудровый</span>
-    </div>
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="l-names">Алина &amp; Тимур</div>
+    <div class="l-line"></div>
   </div>
 
-  <p class="dresscode__note reveal">
-    Просим воздержаться от белого цвета — он зарезервирован за невестой.
-  </p>
-</section>
-
-<!-- WISHES -->
-<section class="wishes">
-  <p class="section-label reveal">Пожелания</p>
-  <h2 class="section-title reveal">Подарки</h2>
-  <p class="wishes__text reveal">
-    Мы очень ценим вашу заботу и внимание. Самый драгоценный подарок —
-    ваше присутствие рядом с нами в этот особенный день. Всему остальному
-    мы будем рады, в какой бы форме это ни было.
-  </p>
-</section>
-
-<!-- CHAT -->
-<section class="chat">
-  <p class="section-label reveal">Сообщество</p>
-  <h2 class="section-title reveal">Чат для гостей</h2>
-  <p class="section-subtitle reveal">
-    Присоединяйтесь к нашему чату — делитесь фото, видео и эмоциями до и после праздника.
-  </p>
-  <a href="https://t.me/" class="chat__btn reveal" target="_blank" rel="noopener">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M22 2L11 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <!-- Ветка левый верхний угол -->
+    <svg class="branch branch--tl" viewBox="0 0 340 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 300 Q60 200 120 150 Q180 100 260 40" stroke="#C4A882" stroke-width="1.5" fill="none" opacity="0.6" />
+      <path d="M120 150 Q140 110 170 80" stroke="#C4A882" stroke-width="1" fill="none" opacity="0.5" />
+      <path d="M170 90 Q190 70 220 60" stroke="#C4A882" stroke-width="1" fill="none" opacity="0.4" />
+      <path d="M180 100 Q200 85 230 78" stroke="#C4A882" stroke-width="1" fill="none" opacity="0.35" />
+      <ellipse cx="135" cy="120" rx="12" ry="7" fill="#C9A898" opacity="0.35" transform="rotate(-25 135 120)" />
+      <ellipse cx="165" cy="92" rx="10" ry="6" fill="#C9A898" opacity="0.3" transform="rotate(-40 165 92)" />
+      <ellipse cx="200" cy="68" rx="9" ry="5" fill="#8A9E8C" opacity="0.3" transform="rotate(-30 200 68)" />
+      <ellipse cx="225" cy="55" rx="8" ry="5" fill="#8A9E8C" opacity="0.25" transform="rotate(-45 225 55)" />
+      <circle cx="145" cy="135" r="4" fill="#C9A898" opacity="0.4" />
+      <circle cx="175" cy="105" r="3.5" fill="#C9A898" opacity="0.35" />
+      <circle cx="210" cy="75" r="3" fill="#C4A882" opacity="0.4" />
+      <path d="M80 200 Q100 175 130 160" stroke="#C4A882" stroke-width="0.8" fill="none" opacity="0.4" />
+      <ellipse cx="115" cy="165" rx="9" ry="5" fill="#8A9E8C" opacity="0.3" transform="rotate(-20 115 165)" />
+      <path d="M160 140 Q175 120 195 108" stroke="#C4A882" stroke-width="0.8" fill="none" opacity="0.35" />
+      <ellipse cx="190" cy="110" rx="8" ry="5" fill="#C9A898" opacity="0.25" transform="rotate(-35 190 110)" />
     </svg>
-    Присоединиться к чату
-  </a>
-</section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer__names reveal">
-    <div>Алина</div>
-    <div style="font-style:italic; color: var(--gold); font-size: 0.5em; margin: 0.3em 0;">&amp;</div>
-    <div>Тимур</div>
+    <!-- Ветка правый нижний угол -->
+    <svg class="branch branch--br" viewBox="0 0 340 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 300 Q60 200 120 150 Q180 100 260 40" stroke="#C4A882" stroke-width="1.5" fill="none" opacity="0.6" />
+      <path d="M120 150 Q140 110 170 80" stroke="#C4A882" stroke-width="1" fill="none" opacity="0.5" />
+      <path d="M170 90 Q190 70 220 60" stroke="#C4A882" stroke-width="1" fill="none" opacity="0.4" />
+      <ellipse cx="135" cy="120" rx="12" ry="7" fill="#C9A898" opacity="0.35" transform="rotate(-25 135 120)" />
+      <ellipse cx="165" cy="92" rx="10" ry="6" fill="#C9A898" opacity="0.3" transform="rotate(-40 165 92)" />
+      <ellipse cx="200" cy="68" rx="9" ry="5" fill="#8A9E8C" opacity="0.3" transform="rotate(-30 200 68)" />
+      <circle cx="145" cy="135" r="4" fill="#C9A898" opacity="0.4" />
+      <circle cx="175" cy="105" r="3.5" fill="#C9A898" opacity="0.35" />
+      <circle cx="210" cy="75" r="3" fill="#C4A882" opacity="0.4" />
+      <path d="M80 200 Q100 175 130 160" stroke="#C4A882" stroke-width="0.8" fill="none" opacity="0.4" />
+      <ellipse cx="115" cy="165" rx="9" ry="5" fill="#8A9E8C" opacity="0.3" transform="rotate(-20 115 165)" />
+    </svg>
+
+    <p class="hero__eyebrow">Приглашение на свадьбу</p>
+    <div class="hero__names">
+      <span class="hero__name" id="name1">Алина</span>
+      <span class="hero__amp">&amp;</span>
+      <span class="hero__name" id="name2">Тимур</span>
+    </div>
+    <div class="hero__divider"></div>
+    <p class="hero__date">14 августа 2026 года</p>
+
+    <div class="hero__scroll">
+      <span>Листать</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <p class="section-label reveal">С любовью</p>
+    <p class="intro__text reveal">
+      Дорогие гости, скоро наступит самый важный день в нашей жизни —
+      мы станем семьёй! Мы очень хотим, чтобы вы разделили с нами эту радость.
+    </p>
+    <p class="intro__sig reveal">— Алина и Тимур</p>
+  </section>
+
+  <!-- DATE BANNER -->
+  <div class="date-banner">
+    <div class="date-banner__item reveal">
+      <div class="date-banner__num">14</div>
+      <div class="date-banner__label">Августа</div>
+    </div>
+    <div class="date-banner__sep reveal"></div>
+    <div class="date-banner__item reveal">
+      <div class="date-banner__num">2026</div>
+      <div class="date-banner__label">Года</div>
+    </div>
+    <div class="date-banner__sep reveal"></div>
+    <div class="date-banner__item reveal">
+      <div class="date-banner__num">17<span style="font-size: 0.4em; color: var(--gold); opacity: 0.7">:00</span></div>
+      <div class="date-banner__label">Начало</div>
+    </div>
   </div>
-  <p class="footer__year reveal">14 · 08 · 2026</p>
-</footer>
 
-<script>
-gsap.registerPlugin(ScrollTrigger);
+  <!-- TIMELINE -->
+  <section class="timeline">
+    <p class="section-label reveal">Программа дня</p>
+    <h2 class="section-title reveal">Как пройдёт наш день</h2>
+    <p class="section-subtitle reveal">Каждый момент продуман с заботой о вас</p>
 
-/* ── LOADER ─────────────────────────────────────────────── */
-const tl = gsap.timeline({
-  onComplete: () => {
-    document.getElementById('loader').style.display = 'none';
-    heroIn();
-  }
-});
+    <div class="timeline__list">
+      <div class="timeline__item">
+        <div class="timeline__time">10:00</div>
+        <div class="timeline__line"></div>
+        <div class="timeline__content">
+          <div class="timeline__event">Регистрация брака</div>
+          <div class="timeline__desc">Управление ЗАГС, ул. Интернациональная 27а. Приготовьте носовые платочки.</div>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__time">15:00</div>
+        <div class="timeline__line"></div>
+        <div class="timeline__content">
+          <div class="timeline__event">Сбор гостей</div>
+          <div class="timeline__desc">Встречаемся, знакомимся, обнимаемся.</div>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__time">16:00</div>
+        <div class="timeline__line"></div>
+        <div class="timeline__content">
+          <div class="timeline__event">Фуршет</div>
+          <div class="timeline__desc">Лёгкие закуски и добрые разговоры.</div>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__time">17:00</div>
+        <div class="timeline__line"></div>
+        <div class="timeline__content">
+          <div class="timeline__event">Банкет</div>
+          <div class="timeline__desc">Вкусные блюда, тосты и незабываемая программа.</div>
+        </div>
+      </div>
+      <div class="timeline__item">
+        <div class="timeline__time">23:00</div>
+        <div class="timeline__line"></div>
+        <div class="timeline__content">
+          <div class="timeline__event">До свидания</div>
+          <div class="timeline__desc">Даже такой прекрасный вечер когда-нибудь заканчивается.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-tl.to('.l-names',  { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out' })
-  .to('.l-line',   { width: 120, duration: 0.6, ease: 'power2.inOut' }, '-=0.2')
-  .to('#loader',   { opacity: 0, duration: 0.6, ease: 'power2.inOut' }, '+=0.4');
+  <!-- DETAILS -->
+  <section class="details">
+    <p class="section-label reveal">Детали</p>
+    <h2 class="section-title reveal">Где и когда</h2>
+    <p class="section-subtitle reveal">Вся необходимая информация</p>
 
-/* ── HERO ANIMATION ─────────────────────────────────────── */
-function heroIn() {
-  const h = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    <div class="details__grid">
+      <div class="details__card">
+        <svg class="details__icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 3C12.477 3 8 7.477 8 13c0 8.25 10 20 10 20s10-11.75 10-20c0-5.523-4.477-10-10-10z"
+            stroke="currentColor" stroke-width="1.2" />
+          <circle cx="18" cy="13" r="3.5" stroke="currentColor" stroke-width="1.2" />
+        </svg>
+        <div class="details__card-title">Место</div>
+        <div class="details__card-value">Ресторан<br>«Белая ночь»</div>
+      </div>
+      <div class="details__card">
+        <svg class="details__icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="8" width="24" height="22" rx="2" stroke="currentColor" stroke-width="1.2" />
+          <path d="M6 15h24" stroke="currentColor" stroke-width="1.2" />
+          <path d="M13 5v6M23 5v6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+          <rect x="11" y="20" width="4" height="4" rx="0.5" fill="currentColor" opacity="0.5" />
+          <rect x="21" y="20" width="4" height="4" rx="0.5" fill="currentColor" opacity="0.5" />
+        </svg>
+        <div class="details__card-title">Дата</div>
+        <div class="details__card-value">14 августа<br>2026 года</div>
+      </div>
+      <div class="details__card">
+        <svg class="details__icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="1.2" />
+          <path d="M18 10v8l5 3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+        </svg>
+        <div class="details__card-title">Время начала</div>
+        <div class="details__card-value">17:00</div>
+      </div>
+      <div class="details__card">
+        <svg class="details__icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 28l4-8 6 4 6-10 4 6" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
+            stroke-linejoin="round" fill="none" />
+          <circle cx="28" cy="10" r="4" stroke="currentColor" stroke-width="1.2" />
+          <path d="M27 10h2M28 9v2" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+        </svg>
+        <div class="details__card-title">Адрес</div>
+        <div class="details__card-value">ул. Примерная, 1</div>
+      </div>
+    </div>
+  </section>
 
-  h.to('.branch',         { opacity: 1, duration: 1.5 })
-   .to('.hero__eyebrow',  { opacity: 1, y: 0, duration: 0.7 }, '-=1')
-   .to('#name1',          { opacity: 1, y: 0, duration: 1 }, '-=0.3')
-   .to('.hero__amp',      { opacity: 1, duration: 0.5 }, '-=0.3')
-   .to('#name2',          { opacity: 1, y: 0, duration: 1 }, '-=0.4')
-   .to('.hero__divider',  { opacity: 1, scaleX: 1, duration: 0.8, transformOrigin: 'center' }, '-=0.2')
-   .to('.hero__date',     { opacity: 1, y: 0, duration: 0.7 }, '-=0.3')
-   .to('.hero__scroll',   { opacity: 1, duration: 0.5 }, '-=0.1');
+  <!-- DRESSCODE -->
+  <section class="dresscode">
+    <p class="section-label reveal">Внешний вид</p>
+    <h2 class="section-title reveal">Дресс-код</h2>
+    <p class="section-subtitle reveal">
+      Мы знаем, что вы прекрасны в любом наряде! Но нам будет особенно радостно,
+      если вы поддержите цветовую гамму нашего торжества.
+    </p>
 
-  /* Scroll hint bounce */
-  gsap.to('.hero__scroll-line', {
-    scaleY: 0.3, transformOrigin: 'top',
-    repeat: -1, yoyo: true, duration: 0.9,
-    ease: 'sine.inOut', delay: 2
-  });
-}
+    <div class="dresscode__swatches">
+      <div class="swatch">
+        <div class="swatch__circle" style="background: #722F37;"></div>
+        <span class="swatch__name">Винный</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch__circle" style="background: #800020;"></div>
+        <span class="swatch__name">Бургунди</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch__circle" style="background: #6B7C5E;"></div>
+        <span class="swatch__name">Оливковый</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch__circle" style="background: #2E6B4F;"></div>
+        <span class="swatch__name">Изумрудный</span>
+      </div>
+      <div class="swatch">
+        <div class="swatch__circle" style="background: #E8D5C4;"></div>
+        <span class="swatch__name">Пудровый</span>
+      </div>
+    </div>
 
-/* ── SCROLL REVEALS (универсальные .reveal) ──────────────── */
-gsap.utils.toArray('.reveal').forEach(el => {
-  gsap.to(el, {
-    scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
-    opacity: 1, y: 0, duration: 0.9, ease: 'power2.out'
-  });
-});
+    <p class="dresscode__note reveal">
+      Просим воздержаться от белого цвета — он зарезервирован за невестой.
+    </p>
+  </section>
 
-/* ── TIMELINE ITEMS ─────────────────────────────────────── */
-gsap.utils.toArray('.timeline__item').forEach((item, i) => {
-  gsap.to(item, {
-    scrollTrigger: { trigger: item, start: 'top 85%' },
-    opacity: 1, x: 0, duration: 0.7,
-    delay: i * 0.08,
-    ease: 'power2.out'
-  });
-});
+  <!-- WISHES -->
+  <section class="wishes">
+    <p class="section-label reveal">Пожелания</p>
+    <h2 class="section-title reveal">Подарки</h2>
+    <p class="wishes__text reveal">
+      Мы очень ценим вашу заботу и внимание. Самый драгоценный подарок —
+      ваше присутствие рядом с нами в этот особенный день. Всему остальному
+      мы будем рады, в какой бы форме это ни было.
+    </p>
+  </section>
 
-/* ── DETAILS CARDS ──────────────────────────────────────── */
-gsap.utils.toArray('.details__card').forEach((card, i) => {
-  gsap.to(card, {
-    scrollTrigger: { trigger: '.details__grid', start: 'top 80%' },
-    opacity: 1, y: 0, duration: 0.6,
-    delay: i * 0.1,
-    ease: 'power2.out'
-  });
-});
+  <!-- CHAT -->
+  <section class="chat">
+    <p class="section-label reveal">Сообщество</p>
+    <h2 class="section-title reveal">Чат для гостей</h2>
+    <p class="section-subtitle reveal">
+      Присоединяйтесь к нашему чату — делитесь фото, видео и эмоциями до и после праздника.
+    </p>
+    <a href="https://t.me/" class="chat__btn reveal" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 2L11 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+      Присоединиться к чату
+    </a>
+  </section>
 
-/* ── SWATCHES ───────────────────────────────────────────── */
-gsap.utils.toArray('.swatch').forEach((sw, i) => {
-  gsap.to(sw, {
-    scrollTrigger: { trigger: '.dresscode__swatches', start: 'top 85%' },
-    opacity: 1, y: 0, duration: 0.5,
-    delay: i * 0.1,
-    ease: 'back.out(1.5)'
-  });
-});
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer__names reveal">
+      <div>Алина</div>
+      <div style="font-style:italic; color: var(--gold); font-size: 0.5em; margin: 0.3em 0;">&amp;</div>
+      <div>Тимур</div>
+    </div>
+    <p class="footer__year reveal">14 · 08 · 2026</p>
+  </footer>
 
-/* ── DATE BANNER COUNTER ANIMATION ─────────────────────── */
-gsap.utils.toArray('.date-banner__num').forEach(num => {
-  gsap.from(num, {
-    scrollTrigger: { trigger: '.date-banner', start: 'top 80%' },
-    y: 40, opacity: 0, duration: 0.8, ease: 'power3.out'
-  });
-});
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
 
-/* ── PARALLAX НА ВЕТКАХ ─────────────────────────────────── */
-gsap.to('.branch--tl', {
-  scrollTrigger: {
-    trigger: '.hero', start: 'top top', end: 'bottom top',
-    scrub: 1.5
-  },
-  y: -60, x: -20
-});
+    /* ── LOADER ─────────────────────────────────────────────── */
+    const tl = gsap.timeline({
+      onComplete: () => {
+        document.getElementById('loader').style.display = 'none';
+        heroIn();
+      }
+    });
 
-gsap.to('.branch--br', {
-  scrollTrigger: {
-    trigger: '.hero', start: 'top top', end: 'bottom top',
-    scrub: 1.5
-  },
-  y: 60, x: 20
-});
-</script>
+    tl.to('.l-names', { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out' })
+      .to('.l-line', { width: 120, duration: 0.6, ease: 'power2.inOut' }, '-=0.2')
+      .to('#loader', { opacity: 0, duration: 0.6, ease: 'power2.inOut' }, '+=0.4');
+
+    /* ── HERO ANIMATION ─────────────────────────────────────── */
+    function heroIn() {
+      const h = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+      h.to('.branch', { opacity: 1, duration: 1.5 })
+        .to('.hero__eyebrow', { opacity: 1, y: 0, duration: 0.7 }, '-=1')
+        .to('#name1', { opacity: 1, y: 0, duration: 1 }, '-=0.3')
+        .to('.hero__amp', { opacity: 1, duration: 0.5 }, '-=0.3')
+        .to('#name2', { opacity: 1, y: 0, duration: 1 }, '-=0.4')
+        .to('.hero__divider', { opacity: 1, scaleX: 1, duration: 0.8, transformOrigin: 'center' }, '-=0.2')
+        .to('.hero__date', { opacity: 1, y: 0, duration: 0.7 }, '-=0.3')
+        .to('.hero__scroll', { opacity: 1, duration: 0.5 }, '-=0.1');
+
+      /* Scroll hint bounce */
+      gsap.to('.hero__scroll-line', {
+        scaleY: 0.3, transformOrigin: 'top',
+        repeat: -1, yoyo: true, duration: 0.9,
+        ease: 'sine.inOut', delay: 2
+      });
+    }
+
+    /* ── SCROLL REVEALS (универсальные .reveal) ──────────────── */
+    gsap.utils.toArray('.reveal').forEach(el => {
+      gsap.to(el, {
+        scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' },
+        opacity: 1, y: 0, duration: 0.9, ease: 'power2.out'
+      });
+    });
+
+    /* ── TIMELINE ITEMS ─────────────────────────────────────── */
+    gsap.utils.toArray('.timeline__item').forEach((item, i) => {
+      gsap.to(item, {
+        scrollTrigger: { trigger: item, start: 'top 85%' },
+        opacity: 1, x: 0, duration: 0.7,
+        delay: i * 0.08,
+        ease: 'power2.out'
+      });
+    });
+
+    /* ── DETAILS CARDS ──────────────────────────────────────── */
+    gsap.utils.toArray('.details__card').forEach((card, i) => {
+      gsap.to(card, {
+        scrollTrigger: { trigger: '.details__grid', start: 'top 80%' },
+        opacity: 1, y: 0, duration: 0.6,
+        delay: i * 0.1,
+        ease: 'power2.out'
+      });
+    });
+
+    /* ── SWATCHES ───────────────────────────────────────────── */
+    gsap.utils.toArray('.swatch').forEach((sw, i) => {
+      gsap.to(sw, {
+        scrollTrigger: { trigger: '.dresscode__swatches', start: 'top 85%' },
+        opacity: 1, y: 0, duration: 0.5,
+        delay: i * 0.1,
+        ease: 'back.out(1.5)'
+      });
+    });
+
+    /* ── DATE BANNER COUNTER ANIMATION ─────────────────────── */
+    gsap.utils.toArray('.date-banner__num').forEach(num => {
+      gsap.from(num, {
+        scrollTrigger: { trigger: '.date-banner', start: 'top 80%' },
+        y: 40, opacity: 0, duration: 0.8, ease: 'power3.out'
+      });
+    });
+
+    /* ── PARALLAX НА ВЕТКАХ ─────────────────────────────────── */
+    gsap.to('.branch--tl', {
+      scrollTrigger: {
+        trigger: '.hero', start: 'top top', end: 'bottom top',
+        scrub: 1.5
+      },
+      y: -60, x: -20
+    });
+
+    gsap.to('.branch--br', {
+      scrollTrigger: {
+        trigger: '.hero', start: 'top top', end: 'bottom top',
+        scrub: 1.5
+      },
+      y: 60, x: 20
+    });
+  </script>
 </body>
+
 </html>
