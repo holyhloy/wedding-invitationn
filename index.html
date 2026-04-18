@@ -436,11 +436,10 @@
     }
 
     .swatch__img-wrap {
-      width: 140px;
-      height: 200px;
+      width: clamp(90px, 12vw, 140px);
+      height: clamp(130px, 18vw, 200px);
       overflow: hidden;
       border-radius: 80px;
-      /* скруглённый прямоугольник — как на свадебных сайтах */
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
     }
 
