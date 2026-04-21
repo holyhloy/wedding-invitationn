@@ -237,6 +237,8 @@ tgbot/settings/dev.py
 
 .vscode
 
+settings.json
+
 secrets/cert/*
 
 !.gitkeep
